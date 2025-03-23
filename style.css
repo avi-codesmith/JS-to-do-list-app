@@ -85,6 +85,7 @@ button {
   padding: 1.2rem;
   border-radius: 8px;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 button:hover {
@@ -117,7 +118,7 @@ li {
   position: relative;
   margin-left: 3.2rem;
   color: #222;
-  font-weight: 400;
+  font-weight: 500;
   width: 100%;
   cursor: pointer;
 }
@@ -126,7 +127,7 @@ li::before {
   content: "";
   height: 2.8rem;
   width: 2.8rem;
-  border: 1px solid royalblue;
+  border: 2.5px solid royalblue;
   border-radius: 50%;
   position: absolute;
   left: -4.5rem;
@@ -141,5 +142,27 @@ li.checked::before {
 
 li.checked {
   text-decoration: line-through;
-  color: #444;
+  color: #555;
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media (max-width: 490px) {
+  .row {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 370px) {
+  html {
+    font-size: 40%;
+  }
+  .wrapper {
+    width: 40rem;
+  }
 }
