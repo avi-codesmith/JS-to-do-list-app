@@ -8,6 +8,11 @@
   user-select: none;
 }
 
+* {
+  scrollbar-width: thin;
+  scrollbar-color: royalblue rgb(183, 199, 245);
+}
+
 html {
   font-size: 62.5%;
 }
@@ -107,31 +112,55 @@ ul {
   align-items: flex-start;
   justify-content: space-between;
   flex-direction: column;
-  gap: 2.4rem;
   margin-top: 2.8rem;
   font-size: 1.8rem;
   list-style: none;
   width: 100%;
+  max-height: 50vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding-left: 1.5rem;
 }
 
 li {
   position: relative;
   margin-left: 3.2rem;
-  color: #222;
+  color: #333;
   font-weight: 500;
   width: 100%;
   cursor: pointer;
+  margin-bottom: 2.4rem;
+  margin-top: 1px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+span {
+  position: absolute;
+  right: 50px;
+  background-color: #fa5252;
+  color: #fff;
+  height: 24px;
+  width: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+span:hover {
+  background-color: red;
 }
 
 li::before {
   content: "";
-  height: 2.8rem;
-  width: 2.8rem;
+  height: 2.4rem;
+  width: 2.4rem;
   border: 2.5px solid royalblue;
   border-radius: 50%;
   position: absolute;
   left: -4.5rem;
-  background-size: cover;
   cursor: pointer;
 }
 
