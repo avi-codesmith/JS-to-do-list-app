@@ -138,11 +138,11 @@ li {
 
 span {
   position: absolute;
-  right: 50px;
+  right: 5rem;
   background-color: #fa5252;
   color: #fff;
-  height: 24px;
-  width: 24px;
+  height: 2.4rem;
+  width: 2.4rem;
   display: flex;
   align-items: center;
   justify-content: center;
