@@ -36,6 +36,8 @@ html {
   padding: 2.5rem 3.5rem;
   border-radius: 10px;
   box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.04), 0px 4px 12px rgba(0, 0, 0, 0.1);
+  transform: scale(0.1);
+  transition: all 0.5s ease;
 }
 
 h1 {
@@ -126,18 +128,25 @@ li {
   margin-left: 3.2rem;
   color: #333;
   font-weight: 500;
-  width: 100%;
+  width: 40rem;
   cursor: pointer;
   margin-bottom: 2.4rem;
   margin-top: 1px;
   position: relative;
   display: flex;
   align-items: center;
+  justify-content: flex-start; /* Aligns content to the left */
+  gap: 1rem;
 }
 
-span {
-  position: absolute;
-  right: 5rem;
+.text {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.delete {
   background-color: #fa5252;
   color: #fff;
   height: 2.4rem;
@@ -146,13 +155,16 @@ span {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
+  gap: 2rem;
+  flex-shrink: 0;
+  margin-right: 1rem;
 }
 
-span:hover {
+.delete:hover {
   background-color: red;
 }
 
-li::before {
+span::before {
   content: "";
   height: 2.4rem;
   width: 2.4rem;
@@ -163,12 +175,12 @@ li::before {
   cursor: pointer;
 }
 
-li.checked::before {
+span.checked::before {
   background: url("images/checked.png");
   background-size: cover;
 }
 
-li.checked {
+span.checked {
   text-decoration: line-through;
   color: #555;
 }
@@ -184,13 +196,18 @@ li.checked {
     flex-direction: column;
     gap: 2rem;
   }
+  li {
+    width: 25rem;
+  }
 }
 
 @media (max-width: 370px) {
   html {
     font-size: 40%;
   }
-  .wrapper {
-    width: 40rem;
-  }
+}
+
+span,
+p {
+  cursor: pointer;
 }
