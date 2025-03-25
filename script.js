@@ -64,11 +64,11 @@ const saveHistory = () => {
   localStorage.setItem("data", ul.innerHTML);
 };
 
-// const showHistory = () => {
-//   ul.innerHTML = localStorage.getItem("data");
-// };
+const showHistory = () => {
+  ul.innerHTML = localStorage.getItem("data");
+};
 
-// showHistory();
+showHistory();
 
 const focus = () => {
   input.focus();
