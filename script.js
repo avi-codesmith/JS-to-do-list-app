@@ -31,16 +31,19 @@ const addList = () => {
     const list = document.createElement("li");
     const writer = document.createElement("span");
     writer.textContent = inputValue;
+    writer.title = "Mark as complete";
     writer.classList.add("text");
-    ul.appendChild(list);
-    list.appendChild(writer);
     const span = document.createElement("p");
     span.classList.add("delete");
+    span.title = "Delete";
     span.textContent = "\u00d7";
-    list.appendChild(span);
     const edit = document.createElement("div");
     edit.classList.add("edit");
+    edit.title = "Edit";
     edit.innerHTML = "&#9998;";
+    ul.appendChild(list);
+    list.appendChild(writer);
+    list.appendChild(span);
     list.appendChild(edit);
   } else {
     input.classList.add("move");
@@ -62,10 +65,20 @@ const keyPressAdd = (e) => {
 const check = (e) => {
   if (e.target.tagName === "SPAN") {
     e.target.classList.toggle("checked");
+    e.target.title = e.target.classList.contains("checked")
+      ? "Unmark as completed"
+      : "Mark as complete";
     saveHistory();
-  } else if (e.target.tagName === "P") {
+  } else if (e.target.classList.contains("delete")) {
     e.target.parentElement.remove();
     saveHistory();
+  } else if (e.target.classList.contains("edit")) {
+    const listItem = e.target.parentElement;
+    const textSpan = listItem.querySelector(".text");
+    if (textSpan) {
+      input.value = textSpan.textContent;
+      input.focus();
+    }
   }
 };
 
