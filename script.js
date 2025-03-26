@@ -28,6 +28,7 @@ const addList = () => {
   const inputValue = input.value;
 
   if (inputValue) {
+    btn.textContent = "Add to list";
     const list = document.createElement("li");
     const writer = document.createElement("span");
     writer.textContent = inputValue;
@@ -77,8 +78,11 @@ const check = (e) => {
     const textSpan = listItem.querySelector(".text");
     if (textSpan) {
       input.value = textSpan.textContent;
+      btn.textContent = "Edit Task";
+      e.target.parentElement.remove();
       input.focus();
     }
+    saveHistory();
   }
 };
 
