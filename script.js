@@ -5,6 +5,7 @@ const ul = document.querySelector("ul");
 const input = document.querySelector("input");
 const logo = document.querySelector("h1");
 const wrapper = document.querySelector(".wrapper");
+const sound = new Audio("errorSound.mp3");
 
 const reload = () => {
   location.reload();
@@ -37,8 +38,16 @@ const addList = () => {
     span.classList.add("delete");
     span.textContent = "\u00d7";
     list.appendChild(span);
+    const edit = document.createElement("div");
+    edit.classList.add("edit");
+    edit.innerHTML = "&#9998;";
+    list.appendChild(edit);
   } else {
-    alert("add text");
+    input.classList.add("move");
+    setTimeout(() => {
+      input.classList.remove("move");
+    }, 400);
+    sound.play();
   }
   input.value = "";
   saveHistory();

@@ -185,6 +185,36 @@ span.checked {
   color: #555;
 }
 
+.move {
+  animation: move 0.1s infinite;
+  box-shadow: inset 0 0 0 1.5px #f44336;
+}
+
+.move::placeholder {
+  color: #f44336;
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(10px);
+  }
+}
+.edit {
+  height: 2.4rem;
+  width: 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #4caf50; /* Green */
+  color: white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.edit:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
 @media (max-width: 600px) {
   html {
     font-size: 50%;
