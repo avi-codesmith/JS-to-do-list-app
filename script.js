@@ -48,6 +48,7 @@ const addList = () => {
     list.appendChild(edit);
   } else {
     input.classList.add("move");
+    input.focus();
     setTimeout(() => {
       input.classList.remove("move");
     }, 400);
